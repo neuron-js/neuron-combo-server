@@ -11,18 +11,44 @@
 
 # neuron-combo-server
 
-<!-- description -->
+Combo server for neuron.js
 
-## Install
+## CLI
 
+### Install
 ```sh
-$ npm install neuron-combo-server --save
+$ npm i -g neuron-combo-server
+$ neuron-combo-server -p 8000
 ```
 
-## Usage
+### Argv
+
+```
+-p <port>, --port <port>     server port, default to 8000
+-d <dir>, --root <dir>       document root, default to process.cwd()
+-l <path>, --location <path> root path, default to 'concat'             
+```
+
+```sh
+curl http://localhost:8000/combo/jquery,underscore
+curl http://localhost:8000/combo/jquery~1.9.2,underscore~*
+curl http://localhost:8000/combo/form~1.0.0~style.css,home~0.2.0~index.css
+```
+
+```
+/<location>/<module_id>,<module_id>
+```
+
+## Express middleware
 
 ```js
-var neuron_combo_server = require('neuron-combo-server');
+var middleware = require('neuron-combo-server');
+var app = express();
+app.use(location, middleware({
+  root: root
+}));
+
+app.listen(port);
 ```
 
 ## License
