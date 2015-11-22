@@ -30,9 +30,9 @@ $ neuron-combo-server -p 8000
 ```
 
 ```sh
-curl http://localhost:8000/combo/jquery,underscore
-curl http://localhost:8000/combo/jquery~1.9.2,underscore~*
-curl http://localhost:8000/combo/form~1.0.0~style.css,home~0.2.0~index.css
+curl http://localhost:8000/combo/jquery/underscore
+curl http://localhost:8000/combo/jquery/1.9.2,underscore/*
+curl http://localhost:8000/combo/form/1.0.0/style.css,home/0.2.0/index.css
 ```
 
 ```
@@ -44,7 +44,8 @@ curl http://localhost:8000/combo/form~1.0.0~style.css,home~0.2.0~index.css
 ```js
 var middleware = require('neuron-combo-server');
 var app = express();
-app.use(location, middleware({
+app.use(middleware({
+  location: location,
   root: root
 }));
 

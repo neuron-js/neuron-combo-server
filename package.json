@@ -27,7 +27,9 @@
   },
   "dependencies": {
     "async-cache": "^1.0.0",
+    "graceful-fs": "^4.1.2",
     "minimist": "^1.2.0",
+    "module-normalize": "^1.0.2",
     "send": "^0.13.0"
   }
 }
