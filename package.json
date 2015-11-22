@@ -24,5 +24,10 @@
   "devDependencies": {
     "mocha": "*",
     "chai": "*"
+  },
+  "dependencies": {
+    "async-cache": "^1.0.0",
+    "minimist": "^1.2.0",
+    "send": "^0.13.0"
   }
 }
